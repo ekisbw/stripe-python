@@ -15,6 +15,10 @@ from stripe.six.moves.urllib.parse import quote_plus
     operations=['create', 'retrieve', 'update', 'delete', 'list']
 )
 @nested_resource_class_methods('login_link', operations=['create'])
+@nested_resource_class_methods(
+    'person',
+    operations=['create', 'retrieve', 'update', 'delete', 'list']
+)
 class Account(CreateableAPIResource, ListableAPIResource,
               UpdateableAPIResource, DeletableAPIResource):
     OBJECT_NAME = 'account'
